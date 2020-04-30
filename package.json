@@ -1,0 +1,16 @@
+{
+  "name": "k-and-r-c",
+  "version": "1.0.0",
+  "description": "My work-through of The C Programming Language.",
+  "scripts": {
+    "start": "ntl",
+    "lint": "prettier -c package.json **/**.md",
+    "lint:save": "prettier --write package.json **/**.md"
+  },
+  "author": "John A. Squier",
+  "license": "ISC",
+  "devDependencies": {
+    "ntl": "5.0.0",
+    "prettier": "2.0.4"
+  }
+}

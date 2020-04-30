@@ -1,0 +1,5 @@
+this line has a trailing space 
+this line has a trailing tab	
+this line has no trailing whitespace
+
+the previous line is blank

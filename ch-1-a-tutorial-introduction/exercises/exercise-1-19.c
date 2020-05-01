@@ -10,7 +10,6 @@ int main(void)
 {
     int length;
     char currentLine[MAX_LINE_LENGTH];
-    char currentLineReversed[MAX_LINE_LENGTH];
 
     while ((length = getLine(currentLine, MAX_LINE_LENGTH)) > 0)
     {

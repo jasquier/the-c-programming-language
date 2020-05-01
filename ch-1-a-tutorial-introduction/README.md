@@ -285,7 +285,7 @@ piece saves lines, and another piece controls the whole process. We'll divide th
 - A `copy` function that saves a line to a safe place.
 - A `main` function to control `getline` and `copy`.
 
-Here is the resulting code:
+[Here][longest-line.c] is the resulting code:
 
 ```c
 #include <stdio.h>
@@ -369,7 +369,79 @@ disappear when the function returns. These variables are also known as _automati
 is not set upon function entry then it will contain garbage.
 
 The alternative to automatic variables are _external variables_ or variables that are external to all functions and can
-be accessed by name by any function.
+be accessed by name by any function. These global variables can (but should not) be used in place of arguments, allowing
+communication between functions. External variables also retain their values after the function that sets the has
+returned.
+
+External variables are defined once but must also be declared in each function that wants to access the variable.
+[Below][longest-line-external.c], we have rewritten the the longest-line [program][longest-line.c] from earlier this
+time using external variables.
+
+```c
+#include <stdio.h>
+
+#define MAXLINE 1000 /* maximum input line size */
+
+int max;               /* maximum length seen so far */
+char line[MAXLINE];    /* current input line */
+char longest[MAXLINE]; /* longest line saved here */
+
+int getline(void);
+void copy(void);
+
+/* print longest input line; specialized version */
+int main(void)
+{
+    int len;
+    extern int max;
+    extern char longest[];
+
+    max = 0;
+    while ((len = getline()) > 0)
+        if (len > max)
+        {
+            max = len;
+            copy();
+        }
+    if (max > 0) /* there was a line */
+        printf("%s", longest);
+    return 0;
+}
+
+/* getline: specialized version */
+int getline(void)
+{
+    int c, i;
+    extern char line[];
+
+    for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+        line[i] = c;
+    if (c == '\n')
+    {
+        line[i] = c;
+        ++i;
+    }
+    line[i] = '\0';
+    return i;
+}
+
+/* copy: specialized version */
+void copy(void)
+{
+    int i;
+    extern char line[], longest[];
+
+    i = 0;
+    while ((longest[i] = line[i]) != ’\0’)
+        ++i;
+}
+```
+
+You can see we first define the external variables just as we would declare any other variable, then we declared them
+using the `extern` keyword in each function that we use the variables.
+
+Relying too heavily on external variables is fraught with peril so use them sparingly and wisely. A program with data
+connections that are not obvious is a program likely to have bugs.
 
 ---
 
@@ -390,4 +462,6 @@ Don't forget to check out the [exercise solutions][exercise-solutions].
 [counting-more.c]: ./counting-more.c
 [power-1.c]: ./power-1.c
 [power-2.c]: ./power-2.c
+[longest-line.c]: ./longest-line.c
+[longest-line-external.c]: ./longest-line-external.c
 [exercise-solutions]: ./exercises

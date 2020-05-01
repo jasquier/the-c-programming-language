@@ -357,11 +357,19 @@ void copy(char to[], char from[])
 Notice how `main` and `getline` communicate through a pair of arguments and a returned value. On the other hand, `copy`
 is used only for its effect and returns no value. We use `void` to state explicitly that no value is returned.
 
-`getline` puts the character '\0' at the end of the array. This character is know as the null terminator and is used to
+`getline` puts the character '\0' at the end of the array. This character is known as the null terminator and is used to
 mark the end of a string of characters. The `%s` format specifier in `printf` expects the corresponding argument to be a
 null terminated character array.
 
 ## 1.10 External Variables and Scope
+
+So far we have only seen variables declared inside of functions making the variables local to the defining function.
+Variables such as the ones we have seen come into existence only when their defining function is called and they
+disappear when the function returns. These variables are also known as _automatic variables_. If an automatic variable
+is not set upon function entry then it will contain garbage.
+
+The alternative to automatic variables are _external variables_ or variables that are external to all functions and can
+be accessed by name by any function.
 
 ---
 

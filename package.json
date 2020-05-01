@@ -4,8 +4,8 @@
   "description": "My work-through of The C Programming Language.",
   "scripts": {
     "start": "ntl",
-    "lint": "prettier -c package.json **/**.md",
-    "lint:save": "prettier --write package.json **/**.md"
+    "lint": "prettier --write package.json **/**.md",
+    "lint:check": "prettier -c package.json **/**.md"
   },
   "author": "John A. Squier",
   "license": "ISC",

@@ -7,5 +7,6 @@ This repository contains my notes and code written while reading K&R C.
 ## Todo
 
 - Finish chapter 1 exercises
-- Clean up chapter 1 notes + add example programs
+- Change triple backtick code blocks to 4 spaces
+- Add example programs for chapter 1
 - Chapter 2

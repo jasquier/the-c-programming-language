@@ -1,0 +1,6 @@
+#!/bin/bash
+# Exit with non-zero status if any of the following commands fail
+set -e
+# Run lint check
+npm run lint:check
+

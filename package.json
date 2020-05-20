@@ -2,6 +2,7 @@
   "name": "k-and-r-c",
   "version": "1.0.0",
   "description": "My work-through of The C Programming Language.",
+  "private": true,
   "scripts": {
     "start": "ntl --exclude start",
     "lint": "prettier --write .",
@@ -10,7 +11,7 @@
   "author": "John A. Squier",
   "license": "ISC",
   "devDependencies": {
-    "ntl": "5.0.0",
-    "prettier": "2.0.4"
+    "ntl": "^5.0.0",
+    "prettier": "^2.0.5"
   }
 }

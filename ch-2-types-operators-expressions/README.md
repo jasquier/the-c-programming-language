@@ -16,6 +16,20 @@ for variable names and uppercase for symbolic constants.
 
 ## 2.2 Data Types and Sizes
 
+We have only a few basic types available to us in C
+
+- `char`: a single byte
+- `int`: an integer, often 32 bits
+- `float`: single precision floating point
+- `double`: double precision floating point
+
+In addition, we can add various qualifiers to some of the basic types. An `int`
+can be `short` or `long`. The only rules enforced upon these qualifiers is that
+the size of a `short` <= 16 bits <= size of an `int` <= 32 bits <= size of a
+`long`. The qualifiers `signed` or `unsigned` may be applied to `char` or any
+`int`. Be aware that `unsigned` numbers are always positive or zero. Lastly,
+`long` may be used with `double` to create an extended precision floating point.
+
 ## 2.3 Constants
 
 ## 2.4 Declarations
@@ -35,3 +49,9 @@ for variable names and uppercase for symbolic constants.
 ## 2.11 Conditional Expressions
 
 ## 2.12 Precedence and Order of Evaluation
+
+---
+
+Don't forget to check out the [exercise solutions][exercise-solutions].
+
+[exercise-solutions]: ./exercises

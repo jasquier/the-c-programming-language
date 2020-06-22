@@ -6,6 +6,6 @@ This repository contains my notes and code written while reading K&R C.
 
 ## Todo
 
-- Finish chapter 1 exercises
-- Add example programs for chapter 1
-- Chapter 2
+- [ ] Finish chapter 1 exercises
+- [ ] Add example programs for chapter 1
+- [ ] Chapter 2

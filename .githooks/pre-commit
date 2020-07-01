@@ -1,5 +1,15 @@
 #!/bin/bash
+
+NC="\033[0m"
+LIGHTGREEN="\033[38;5;42m"
+
 # Exit with non-zero status if any of the following commands fail
 set -e
+
 # Run prettier on staged files only
 ./node_modules/.bin/prettier --check $(git diff-index --cached --name-only HEAD)
+printf "${LIGHTGREEN}Staged files are Prettier!${NC}\n"
+
+# Run shfmt on all files
+printf "${LIGHTGREEN}Running shfmt on all files...${NC}\n"
+shfmt -w .

@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "ntl --exclude start",
-    "lint": "prettier --write .",
-    "lint:check": "prettier --check ."
+    "style": "prettier --write .",
+    "style:check": "prettier --check ."
   },
   "author": "John A. Squier",
   "license": "ISC",

@@ -1,15 +1,10 @@
 #!/bin/bash
 
-NC="\033[0m"
-LIGHTGREEN="\033[38;5;42m"
-
 # Exit with non-zero status if any of the following commands fail
 set -e
 
-# Run prettier
-npm run style -- --loglevel warn
-printf "${LIGHTGREEN}Files are Prettier!${NC}\n"
-
-# Run shfmt on all files
-printf "${LIGHTGREEN}Shell scripts are formatted!${NC}\n"
-shfmt -w .
+# Run prettier + shfmt
+echo "Styling..." | lolcat
+npm --loglevel silent run style:check
+shfmt -l .
+echo "Files are formatted!" | lolcat
